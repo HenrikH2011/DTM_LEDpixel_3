@@ -20,6 +20,7 @@ bool room_status = false;
 bool dinnerRoom_status = false;
 
 
+
 void setup() {
   // put your setup code here, to run once:
   FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);  // setup the neopixel: type, Pin, leds array, LEDs to hadle
