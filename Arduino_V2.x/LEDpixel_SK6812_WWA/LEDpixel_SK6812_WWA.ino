@@ -9,6 +9,7 @@
 
 #define NUM_LEDS 7 // How many LEDpixel to handle
 #define LED_PIN 4 // Arduino Pin to connect to LEDpixel DIN Pin
+#define Pbutton_1 2 // PushButton on PD2 / INT0 - for external ISR 
 
 CRGB leds[NUM_LEDS]; // array of LEDpixel's (NUM_LEDS)
 // RGB_ORDER RGB;
@@ -19,6 +20,8 @@ bool entre_status = false;
 bool room_status = false;
 bool dinnerRoom_status = false;
 
+bool status_Pbutton_1 = false;
+int LED_value = 100; // ledPixel CHSV : V:Value:Brightness
 
 void setup() {
   // put your setup code here, to run once:
@@ -80,11 +83,11 @@ void loop() {
 
 // Test all LED's - Set on 
  //leds[0] = CHSV (0, 150, 100);
- leds[1] = CHSV (255, 200, 100);
+ leds[1] = CHSV (255, 200, LED_value);
  //leds[2] = CHSV (0, 150, 100);
- leds[3] = CHSV (255, 200, 100);
+ leds[3] = CHSV (255, 200, LED_value);
  //leds[4] = CHSV (225, 150, 100);
- leds[5] = CHSV (255, 200, 100);
+ leds[5] = CHSV (255, 200, LED_value);
  //leds[6] = CHSV (0, 150, 100);
 
  FastLED.show(); // send data to LEDpixel DIN Pin
@@ -93,11 +96,11 @@ void loop() {
 
 // Test all LED's - Set on
  //leds[0] = CHSV (0, 150, 100);
- leds[1] = CHSV (220, 200, 100);
+ leds[1] = CHSV (220, 200, LED_value);
  //leds[2] = CHSV (0, 150, 100);
- leds[3] = CHSV (220, 200, 100);
+ leds[3] = CHSV (220, 200, LED_value);
  //leds[4] = CHSV (225, 150, 100);
- leds[5] = CHSV (220, 200, 100);
+ leds[5] = CHSV (220, 200, LED_value);
  //leds[6] = CHSV (0, 150, 100);
 
  FastLED.show(); // send data to LEDpixel DIN Pin
