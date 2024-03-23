@@ -7,7 +7,7 @@
 #include <Arduino.h>
 #include <FastLED.h> // library by Daniel Garcia
 
-#define NUM_LEDS 7 // How many LEDpixel to handle
+#define NUM_LEDS 10 // How many LEDpixel to handle
 #define LED_PIN 4 // Arduino Pin to connect to LEDpixel DIN Pin
 #define Pbutton_1 2 // PushButton on PD2 / INT0 - for external ISR 
 
@@ -45,7 +45,7 @@ void setup() {
  FastLED.show(); // send data to LEDpixel DIN Pin
 
  delay(2000);
-*/
+
 
 
 
@@ -56,6 +56,9 @@ void setup() {
  leds[4] = CRGB:: White;
  leds[5] = CRGB:: White;
  leds[6] = CRGB:: White;
+ leds[7] = CRGB:: White;
+ leds[8] = CRGB:: White;
+ leds[9] = CRGB:: White;
 
  FastLED.show();
 
@@ -70,10 +73,14 @@ void setup() {
  leds[4] = CRGB:: Black;
  leds[5] = CRGB:: Black;
  leds[6] = CRGB:: Black;
+ leds[7] = CRGB:: Black;
+ leds[8] = CRGB:: Black;
+ leds[9] = CRGB:: Black;
 
  FastLED.show(); // send data to LEDpixel DIN Pin
 
  delay(1000);
+*/
 
 } // END void setup 
 
@@ -81,14 +88,65 @@ void loop() {
 
 // NOTE: test af SK6812WWA LEDpixel
 
+ // Test all LED's - Set on
+ leds[0] = CHSV (0, 200, 50);
+ leds[1] = CHSV (32, 200, 100);
+ leds[2] = CHSV (64, 200, 150);
+ leds[3] = CHSV (96, 200, 200);
+ leds[4] = CHSV (128, 200, 250);
+ leds[5] = CHSV (160, 200, 255);
+ leds[6] = CHSV (192, 200, 0);
+ leds[7] = CHSV (9, 200, 100);
+ leds[8] = CHSV (87, 200, 100);
+ leds[9] = CHSV (43, 200, 100);
+
+ FastLED.show(); // send data to LEDpixel DIN Pin
+
+ delay(2000);
+
+ leds[0].setRGB(255, 100, 0);
+ leds[1].setRGB(255, 100, 0);
+ leds[2].setRGB(255, 100, 0);
+ leds[3].setRGB(255, 100, 0);
+ leds[4] = CRGB:: White;
+ leds[5] = CRGB:: White;
+ leds[6] = CRGB:: White;
+ leds[7] = CRGB:: White;
+ leds[8] = CRGB:: White;
+ leds[9] = CRGB:: White;
+
+ FastLED.show();
+
+ delay(500);
+
+ leds[0] = CRGB:: Black;
+ leds[1] = CRGB:: Black;
+ leds[2] = CRGB:: Black;
+ leds[3] = CRGB:: Black;
+ leds[4] = CRGB:: Black;
+ leds[5] = CRGB:: Black;
+ leds[6] = CRGB:: Black;
+ leds[7] = CRGB:: Black;
+ leds[8] = CRGB:: Black;
+ leds[9] = CRGB:: Black;
+
+ FastLED.show(); // send data to LEDpixel DIN Pin
+
+ delay(500);
+
+/*
+
 // Test all LED's - Set on 
  //leds[0] = CHSV (0, 150, 100);
- leds[1] = CHSV (255, 200, LED_value);
+ leds[1] = CHSV (64, 200, LED_value);
  //leds[2] = CHSV (0, 150, 100);
- leds[3] = CHSV (255, 200, LED_value);
+ leds[3] = CHSV (64, 200, LED_value);
  //leds[4] = CHSV (225, 150, 100);
- leds[5] = CHSV (255, 200, LED_value);
+ leds[5] = CHSV (64, 200, LED_value);
  //leds[6] = CHSV (0, 150, 100);
+ leds[7] = CHSV (255, 200, LED_value);
+ leds[8] = CHSV (255, 200, LED_value);
+ leds[9] = CHSV (255, 200, LED_value);
 
  FastLED.show(); // send data to LEDpixel DIN Pin
 
@@ -102,6 +160,9 @@ void loop() {
  //leds[4] = CHSV (225, 150, 100);
  leds[5] = CHSV (220, 200, LED_value);
  //leds[6] = CHSV (0, 150, 100);
+ leds[7] = CHSV (220, 200, LED_value);
+ leds[8] = CHSV (220, 200, LED_value);
+ leds[9] = CHSV (220, 200, LED_value);
 
  FastLED.show(); // send data to LEDpixel DIN Pin
 
@@ -122,7 +183,7 @@ void loop() {
 
 
 
-/*
+
 
  leds[0] = CRGB (255, 0, 0);
  leds[1] = CRGB (0, 0, 0);
@@ -136,8 +197,8 @@ void loop() {
 
 
  // delay(2000);
-*/
-/*
+
+
  leds[0] = CRGB:: White;
  leds[1] = CRGB:: White;
  leds[2] = CRGB:: White;
